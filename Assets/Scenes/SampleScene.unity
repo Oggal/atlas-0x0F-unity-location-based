@@ -457,6 +457,7 @@ GameObject:
   - component: {fileID: 817261568}
   - component: {fileID: 817261567}
   - component: {fileID: 817261569}
+  - component: {fileID: 817261570}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Untagged
@@ -507,7 +508,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182837842614e4d46aec82a5cc3e9554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gui: {fileID: 0}
+  gui: {fileID: 817261567}
+  gps: {fileID: 817261570}
+--- !u!114 &817261570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817261566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 081a95791bc58f64193b319e7bb51151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gps_timeout: 20
+  gps_altitude: 0
+  gps_latitude: 0
+  gps_longitude: 0
+  OnUpdateGPS:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1537752781
 GameObject:
   m_ObjectHideFlags: 0

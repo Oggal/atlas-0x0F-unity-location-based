@@ -15,6 +15,8 @@ public class UIController : MonoBehaviour
         {
             gui = GetComponent<UIDocument>();
         }
+        
+        UpdateUI_GPS();
         gui.rootVisualElement.Add(new Button(() => { ping_GPS(); }) { text = "PING!" });
         if(gps != null)
         {
@@ -45,9 +47,15 @@ public class UIController : MonoBehaviour
     void UpdateUI_GPS()
     {
         if(gps == null)
+        {
             return;
-        var gps_lat = gui.rootVisualElement.Q<VisualElement>("Latitude").Q<Label>("Output");
+        }
+        Label gps_lat = gui.rootVisualElement.Q<VisualElement>("Latitude").Q<Label>("Output");
+        Label gps_long = gui.rootVisualElement.Q<VisualElement>("Longitude").Q<Label>("Output");
+        Label gps_alt = gui.rootVisualElement.Q<VisualElement>("Altitude").Q<Label>("Output");
         gps_lat.text = gps.gps_latitude.ToString();
+        gps_long.text = gps.gps_longitude.ToString();
+        gps_alt.text = gps.gps_altitude.ToString();
 
     }
 }

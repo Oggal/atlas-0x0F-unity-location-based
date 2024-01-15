@@ -6,11 +6,9 @@ using UnityEngine.Events;
 public class gps_pinger : MonoBehaviour
 {
     public int gps_timeout = 20;
-    public Vector3 gps_location;
-    public float gps_accuracy;
-    public float gps_altitude;
-    public float gps_latitude;
-    public float gps_longitude;
+    public float gps_altitude = 0;
+    public float gps_latitude = 0;
+    public float gps_longitude = 0;
 
     public UnityEvent OnUpdateGPS;
     // Start is called before the first frame update
@@ -23,6 +21,16 @@ public class gps_pinger : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnGUI()
+    {
+        GUIStyle style = new GUIStyle();
+        style.normal.textColor = Color.white;
+        GUILayout.Label("GPS Longitude: " + gps_longitude.ToString(),style);
+        GUILayout.Label("GPS Latitude: " + gps_latitude.ToString(),style);
+        GUILayout.Label("GPS Altitude: " + gps_altitude.ToString(),style);
+        GUILayout.Label(string.Format("GPS Status: {0}", Input.location.status),style);
     }
 
     public IEnumerator Init_GPS()
@@ -51,15 +59,15 @@ public class gps_pinger : MonoBehaviour
             Debug.Log("GPS not running");
             yield break;
         }
-        
+        Debug.Log(Input.location.status.ToString());
         gps_altitude = Input.location.lastData.altitude;
         gps_latitude = Input.location.lastData.latitude;
         gps_longitude = Input.location.lastData.longitude;
-        Debug.Log("Altitude: " + gps_altitude.ToString());
-        Debug.Log("Latitude: " + gps_latitude.ToString());
-        Debug.Log("Longitude: " + gps_longitude.ToString());
+        Debug.Log("Altitude: " + gps_altitude.ToString("F3.4"));
+        Debug.Log("Latitude: " + gps_latitude.ToString("F3.4"));
+        Debug.Log("Longitude: " + gps_longitude.ToString("F3.4"));
+
         OnUpdateGPS.Invoke();
-    
         Input.location.Stop();
     }
 }

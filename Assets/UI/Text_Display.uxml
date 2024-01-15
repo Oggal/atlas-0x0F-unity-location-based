@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Atlas_TextStyle.uss?fileID=7433441132597879392&amp;guid=72622ab99596c3f48b33248ce9aa1477&amp;type=3#Atlas_TextStyle" />
     <ui:VisualElement name="Text_Display" class="Text_DisplayStyle">
-        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" />
+        <ui:Label tabindex="-1" text="Title" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" />
         <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Output" />
     </ui:VisualElement>
 </ui:UXML>
