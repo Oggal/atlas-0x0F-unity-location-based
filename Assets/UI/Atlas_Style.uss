@@ -1,0 +1,24 @@
+.unity-text-element {
+    -unity-font: url('project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=503f6748751830f49aa993a4bf174387&type=3#NotInter-Regular');
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-center;
+    -unity-text-outline-width: 0.5px;
+}
+
+.unity-button {
+    border-radius: 5px;
+    border-width: 3px;
+    border-color: rgba(255, 255, 255, 0.5);
+    border-style: solid;
+    background-color: rgba(255, 255, 255, 0.1);
+    
+}
+.Databox
+{
+    padding: 10%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+

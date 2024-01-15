@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Text_Display" src="project://database/Assets/UI/Text_Display.uxml?fileID=9197481963319205126&amp;guid=2220461bdb034644f842e6393f3dbf44&amp;type=3#Text_Display" />
+    <Style src="project://database/Assets/UI/Atlas_Style.uss?fileID=7433441132597879392&amp;guid=713652c8b9f63c7418dff6ad9508e912&amp;type=3#Atlas_Style" />
+    <ui:VisualElement class="Databox" style="flex-grow: 1;">
+        <ui:Instance template="Text_Display" name="Longitude">
+            <AttributeOverrides element-name="Title" text=" Longitude:" />
+        </ui:Instance>
+        <ui:Instance template="Text_Display" name="Latitude">
+            <AttributeOverrides element-name="Title" text="Latitude:" />
+        </ui:Instance>
+        <ui:Instance template="Text_Display" name="Altitude">
+            <AttributeOverrides element-name="Title" text="Altitude:" />
+        </ui:Instance>
+    </ui:VisualElement>
+    <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+</ui:UXML>
