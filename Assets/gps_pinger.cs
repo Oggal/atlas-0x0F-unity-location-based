@@ -9,6 +9,8 @@ public class gps_pinger : MonoBehaviour
     public float gps_altitude = 0;
     public float gps_latitude = 0;
     public float gps_longitude = 0;
+    public LocationInfo gps_locationA, gps_locationB;
+    public float gps_distance = 0;
 
     public UnityEvent OnUpdateGPS;
     // Start is called before the first frame update
@@ -35,6 +37,7 @@ public class gps_pinger : MonoBehaviour
 
     public IEnumerator Init_GPS()
     {
+    
         Input.location.Start();
         int timeout = gps_timeout;
         while (Input.location.status == LocationServiceStatus.Initializing && timeout > 0)
@@ -66,8 +69,26 @@ public class gps_pinger : MonoBehaviour
         Debug.Log("Altitude: " + gps_altitude.ToString("F3.4"));
         Debug.Log("Latitude: " + gps_latitude.ToString("F3.4"));
         Debug.Log("Longitude: " + gps_longitude.ToString("F3.4"));
-
         OnUpdateGPS.Invoke();
         Input.location.Stop();
     }
+
+
+    public float Haversine(LocationInfo pointA, LocationInfo pointB)
+    {
+        float R = 6371e3f; // Earth's radius in meters
+        float Lat1 = pointA.latitude * Mathf.Deg2Rad;  // convert lat to radians
+        float Lat2 = pointB.latitude * Mathf.Deg2Rad;  // convert lat to radians
+        float deltaLat = (pointB.latitude - pointA.latitude) * Mathf.Deg2Rad; // convert lat to radians
+        float deltaLon = (pointB.longitude - pointA.longitude) * Mathf.Deg2Rad; // convert long to radians
+
+        float a = Mathf.Sin(deltaLat / 2) * Mathf.Sin(deltaLat / 2) +
+            Mathf.Cos(Lat1) * Mathf.Cos(Lat2) *
+            Mathf.Sin(deltaLon / 2) * Mathf.Sin(deltaLon / 2);
+        float c = 2 * Mathf.Atan2(Mathf.Sqrt(a), Mathf.Sqrt(1 - a));
+
+
+        return R * c;
+    }
+
 }

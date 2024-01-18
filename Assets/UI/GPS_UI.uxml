@@ -12,5 +12,5 @@
             <AttributeOverrides element-name="Title" text="Altitude:" />
         </ui:Instance>
     </ui:VisualElement>
-    <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+    <!-- <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" /> -->
 </ui:UXML>
