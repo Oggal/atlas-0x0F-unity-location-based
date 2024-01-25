@@ -74,7 +74,7 @@ public class gps_pinger : MonoBehaviour
     }
 
 
-    public float Haversine(LocationInfo pointA, LocationInfo pointB)
+    public static float Haversine(LocationInfo pointA, LocationInfo pointB)
     {
         float R = 6371e3f; // Earth's radius in meters
         float Lat1 = pointA.latitude * Mathf.Deg2Rad;  // convert lat to radians
@@ -87,6 +87,22 @@ public class gps_pinger : MonoBehaviour
             Mathf.Sin(deltaLon / 2) * Mathf.Sin(deltaLon / 2);
         float c = 2 * Mathf.Atan2(Mathf.Sqrt(a), Mathf.Sqrt(1 - a));
 
+
+        return R * c;
+    }
+
+    public static float Haversine(Vector2 pointA, Vector2 pointB)
+    {
+        float R = 6371e3f; // Earth's radius in meters
+        float Lat1 = pointA.x * Mathf.Deg2Rad;  // convert lat to radians
+        float Lat2 = pointB.x * Mathf.Deg2Rad;  // convert lat to radians
+        float deltaLat = (pointB.x - pointA.x) * Mathf.Deg2Rad; // convert delta lat to radians
+        float deltaLon = (pointB.y - pointA.y) * Mathf.Deg2Rad; // convert delta long to radians
+
+        float a = Mathf.Sin(deltaLat / 2) * Mathf.Sin(deltaLat / 2) +
+            Mathf.Cos(Lat1) * Mathf.Cos(Lat2) *
+            Mathf.Sin(deltaLon / 2) * Mathf.Sin(deltaLon / 2);
+        float c = 2 * Mathf.Atan2(Mathf.Sqrt(a), Mathf.Sqrt(1 - a));
 
         return R * c;
     }

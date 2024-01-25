@@ -53,9 +53,11 @@ public class UIController : MonoBehaviour
         Label gps_lat = gui.rootVisualElement.Q<VisualElement>("Latitude").Q<Label>("Output");
         Label gps_long = gui.rootVisualElement.Q<VisualElement>("Longitude").Q<Label>("Output");
         Label gps_alt = gui.rootVisualElement.Q<VisualElement>("Altitude").Q<Label>("Output");
+        Label gps_distance = gui.rootVisualElement.Q<VisualElement>("Distance").Q<Label>("Output");
         gps_lat.text = gps.gps_latitude.ToString();
         gps_long.text = gps.gps_longitude.ToString();
         gps_alt.text = gps.gps_altitude.ToString();
+        gps_distance.text = gps_pinger.Haversine(new Vector2(gps.gps_latitude, gps.gps_longitude), Vector2.up * gps.gps_longitude).ToString();
 
     }
 }

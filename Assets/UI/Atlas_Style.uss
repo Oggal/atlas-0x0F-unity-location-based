@@ -13,6 +13,15 @@
     background-color: rgba(255, 255, 255, 0.1);
     
 }
+
+.unity-button:hover {
+    background-color: rgba(200, 200, 200, 0.1);
+}
+
+.unity-button:active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 .Databox
 {
     padding: 10%;
