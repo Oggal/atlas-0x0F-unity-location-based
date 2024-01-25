@@ -16,7 +16,7 @@ public class UIController : MonoBehaviour
             gui = GetComponent<UIDocument>();
         }
         
-        UpdateUI_GPS();
+        gui.rootVisualElement.Query<Label>("Output").ForEach(L => L.text = "0");
         gui.rootVisualElement.Add(new Button(() => { ping_GPS(); }) { text = "PING!" });
         if(gps != null)
         {

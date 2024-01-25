@@ -11,6 +11,8 @@
         <ui:Instance template="Text_Display" name="Altitude">
             <AttributeOverrides element-name="Title" text="Altitude:" />
         </ui:Instance>
+        <ui:Instance template="Text_Display" name="Distance">
+            <AttributeOverrides element-name="Title" text="Distance:" />
+        </ui:Instance>
     </ui:VisualElement>
-    <!-- <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" /> -->
 </ui:UXML>

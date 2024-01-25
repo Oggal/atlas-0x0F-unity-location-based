@@ -79,8 +79,8 @@ public class gps_pinger : MonoBehaviour
         float R = 6371e3f; // Earth's radius in meters
         float Lat1 = pointA.latitude * Mathf.Deg2Rad;  // convert lat to radians
         float Lat2 = pointB.latitude * Mathf.Deg2Rad;  // convert lat to radians
-        float deltaLat = (pointB.latitude - pointA.latitude) * Mathf.Deg2Rad; // convert lat to radians
-        float deltaLon = (pointB.longitude - pointA.longitude) * Mathf.Deg2Rad; // convert long to radians
+        float deltaLat = (pointB.latitude - pointA.latitude) * Mathf.Deg2Rad; // convert delta lat to radians
+        float deltaLon = (pointB.longitude - pointA.longitude) * Mathf.Deg2Rad; // convert delta long to radians
 
         float a = Mathf.Sin(deltaLat / 2) * Mathf.Sin(deltaLat / 2) +
             Mathf.Cos(Lat1) * Mathf.Cos(Lat2) *
