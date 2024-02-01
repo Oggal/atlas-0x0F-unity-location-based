@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 444748128718085574}
   - component: {fileID: 7272317738826372981}
   - component: {fileID: 1931688462749433374}
+  - component: {fileID: 4618724624512310182}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: GPSMarker
@@ -107,3 +108,16 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &4618724624512310182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8278097536582356917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a9a3286cf078441ada9e0f2857a4a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GPSCords: {x: 0, y: 0}
