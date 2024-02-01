@@ -217,7 +217,7 @@ public class gps_pinger : MonoBehaviour
         pointB.x = Input.location.lastData.latitude;
         pointB.y = Input.location.lastData.longitude;
         SpawnMarkerAtGPS();
-        CenterOnGPS();
+        CenterGPSOnUser();
         Input.location.Stop();
         gps_distance = Haversine(pointA, pointB);
         OnUpdateDistance.Invoke();
@@ -248,7 +248,7 @@ public class gps_pinger : MonoBehaviour
             pointB.x = Input.location.lastData.latitude;
             pointB.y = Input.location.lastData.longitude;
             gps_distance = Haversine(pointA, pointB);
-            CenterOnGPS();
+            CenterGPSOnUser();
             OnUpdateDistance.Invoke();
             yield return new WaitForSeconds(1);
         }
